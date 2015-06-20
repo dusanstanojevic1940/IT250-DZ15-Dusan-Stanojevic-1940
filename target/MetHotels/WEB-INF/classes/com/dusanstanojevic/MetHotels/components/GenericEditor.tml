@@ -1,0 +1,24 @@
+<html t:type="layout" title="Genericki editor" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	
+	<t:Zone t:id="zone">
+	<t:beaneditform object="bean" t:id="beanForm"/>
+	
+	<t:Form t:id="form" t:zone="zone">
+		<t:TextField t:value="searchString"/>
+		<t:Submit/>
+	</t:Form>
+	
+		<t:grid source="grid" add="edit,delete,view" row="row" t:zone="zone">
+			<p:editCell>
+				<t:actionlink t:id="edit" t:context="${row.getId()}">Izmeni</t:actionlink>
+			</p:editCell> 
+			<p:deleteCell>
+				<t:actionlink t:id="delete" t:zone="zone" t:context="${row.getId()}">Izbrisi</t:actionlink> 
+			</p:deleteCell>
+		</t:grid> 
+		<t:Loop t:source="allPages" value="currPage">
+			<t:actionlink t:id="page" t:zone="zone" t:context="currPage">${currPage}</t:actionlink>
+		</t:Loop>
+	</t:Zone>
+	 
+</html>

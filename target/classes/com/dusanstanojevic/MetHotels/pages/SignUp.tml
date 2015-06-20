@@ -1,0 +1,12 @@
+<html t:type="layout" title="Genericki editor" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<t:Form>
+		<t:Errors/>
+		<t:TextField t:value="username"/>
+		<t:TextField t:value="password"/>
+		<t:Submit/>
+	</t:Form>
+	<a href="${facebookAuthentificationLink}">
+	 	<input type="button" class="input2" value="Login with facebook"/>
+	</a>
+	 
+</html>
